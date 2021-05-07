@@ -43,7 +43,7 @@ ROS2 implementation of Interestingness_ros (ROS1) (a ROS2 source package)
 ### Submodule
 
 ```shell
-cd [to-your-ws]/src/
+cd [to-your-ws]/src/interestingness_ros2
 git submodule init
 git submodule update
 ```
