@@ -1,0 +1,3 @@
+[submodule "interestingness_ros2/interestingness"]
+	path = interestingness_ros2/interestingness
+	url = https://github.com/wang-chen/interestingness.git
