@@ -1,7 +1,11 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from ament_index_python.packages import get_package_share_directory
+from ament_index_python.packages import get_package_share_directory,get_package_prefix
 import os
+
+share_path=get_package_prefix('interestingness_ros2')
+pack_path=os.path.join(share_path[0:-28],'src','interestingness_ros2')
+
 
 def generate_launch_description():
     ld = LaunchDescription()
@@ -12,7 +16,7 @@ def generate_launch_description():
         executable="live_detector",
         parameters=[
             {"image-topic": ["/rs_front/color/image"]},
-            {"model-save": '/home/li/CMU_RISS/my_ws2/src/interestingness_ros2/saves/vgg16.pt.SubTF.n100usage.mse'},
+            {"model-save": os.path.join(pack_path,'saves','vgg16.pt.SubTF.n100usage.mse')},
             {"crop-size": 320},
             {"num-interest": 10},
             {"skip-frames": 1},
